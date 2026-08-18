@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="CWA Help Desk appointment booking form">
+        <meta name="keywords" content="help, desk, support, appointment, CWA">
+        <meta name="author" content="Shahryar Rahman Saad">
+        <title>CWA Help Desk Appointment</title>
+    </head>
+    <body>
+        <!-- Logo with hyperlink -->
+        <a href="http://www.swin.edu.au">
+            <img src="assets/logo.png" alt="Swinburne University of Technology" height="100">
+        </a>
+
+        <!-- Heading -->
+        <h1>CWA Help Desk Appointment</h1>
+        <p>The Help Desk is located in ATC620. Open 10:30 to 19:00 Monday to Friday</p>
+
+        <p>Check Blackboard for when CWA tutors will be there.</p>
+        
+        <!--Form-->
+        <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+            <!--Fieldset for Student details-->
+            <fieldset>
+                <legend>Student details</legend>
+                <label for="student_id">Student ID</label>
+                <input type="text" name="student_id" id="student_id" pattern="\d{7,10}" required>
+                <br>
+                <br>
+                <label for="given_name">Given Name</label>
+                <input type="text" name="given_name" id="given_name" maxlength="15" pattern="[A-Za-z]+" required>
+                <label for="family_name">Family Name</label>
+                <input type="text" name="family_name" id="family_name" maxlength="15" pattern="[A-Za-z]+" required>
+            </fieldset>
+
+            <!--Fieldset for Your unit -->
+            <fieldset>
+                <legend>Your unit</legend>
+                <input type="radio" name="unit" id="unit1" value="COS10011" required>
+                <label for="unit1">COS10011</label>
+                <input type="radio" name="unit" id="unit2" value="COS60004">
+                <label for="unit2">COS60004</label>
+                <input type="radio" name="unit" id="unit3" value="COS60007">
+                <label for="unit3">COS60007</label>
+                <br>
+                <br>
+                <label for="tutor">Your Tutor</label>
+                <select name="tutor" id="tutor" required>
+                    <option value="">Please Select</option>
+                    <option value="atie">Atie Kia</option>
+                    <option value="razeen">Razeen Hashmi</option>
+                    <option value="rahul">Rahul Raghavan</option>
+                    <option value="nick">Nick</option>
+                    <option value="feixue">Feixue</option>
+                    <option value="other">Other</option>
+                </select>
+            </fieldset>
+
+            <!--Fieldset for Issue -->
+            <fieldset>
+                <legend>Issue</legend>
+                <label for="issue_html">HTML</label>
+                <input type="checkbox" name="issue[]" id="issue_html" value="html" checked="checked">
+                <label for="issue_css">CSS</label>
+                <input type="checkbox" name="issue[]" id="issue_css" value="css">
+                <label for="issue_js">JavaScript</label>
+                <input type="checkbox" name="issue[]" id="issue_js" value="javascript">
+                <label for="issue_php">PHP</label>
+                <input type="checkbox" name="issue[]" id="issue_php" value="php">
+                <label for="issue_mysql">MySQL</label>
+                <input type="checkbox" name="issue[]" id="issue_mysql" value="mysql">
+                <br><br>
+
+                <label for="issue_description">Description of Issue</label>
+                <br>
+                <textarea name="issue_description" id="issue_description" rows="4" cols="50" placeholder="Write description of your problem here..."></textarea>
+            </fieldset>
+
+            <!--Fieldset for Preferred Date / Time -->
+            <fieldset>
+                <legend>Preferred Date / Time</legend>
+                <label for="date">Date</label>
+                <input type="text" name="dob" id="date" placeholder="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}" required>
+                <br>
+                <label for="time">Time</label>
+                <input type="text" name="time" id="time" placeholder="00:00" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" required>
+            </fieldset>
+            <input type="submit" value="Book">
+            <input type="reset" value="Reset form">
+        </form>
+    </body>
+</html>
